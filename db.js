@@ -64,9 +64,9 @@
         let date = new Date();
         let uniqueKey = Symbol(date.getTime()).toString();
         let path = this.getPath();
-        Object.assign(obj, {
+        Object.assign({
             "_id": uniqueKey
-        });
+        }, obj);
         try {
             let data = fs.readFileSync(path, "utf-8") || "[]";
             data = JSON.parse(data);

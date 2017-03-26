@@ -1,0 +1,16 @@
+{
+  "name": "nibble-db",
+  "version": "0.0.1",
+  "description": "small size database which uses file system to manage you data",
+  "main": "db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "local-store",
+    "local-storage",
+    "local-database"
+  ],
+  "author": "Manish Kumar",
+  "license": "ISC"
+}

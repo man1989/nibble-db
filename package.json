@@ -11,6 +11,15 @@
     "local-storage",
     "local-database"
   ],
-  "author": "Manish Kumar",
-  "license": "MIT"
+  "repository":"https://github.com/man1989/nibble-db",
+  "homepage":"https://github.com/man1989/nibble-db",
+  "bugs": {
+      "url": "https://github.com/man1989/nibble-db/issues",
+      "email": "manish.sep1989@gmail.com"
+   }, 
+  "author": "Manish Kumar <manish.sep1989@gmail.com>",
+  "license": {
+      "type": "MIT",
+      "url": "https://github.com/man1989/nibble-db/blob/master/LICENSE"
+  }
 }

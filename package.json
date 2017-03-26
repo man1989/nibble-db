@@ -1,6 +1,6 @@
 {
   "name": "nibble-db",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "small size database which uses file system to manage you data",
   "main": "db.js",
   "scripts": {

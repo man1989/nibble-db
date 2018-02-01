@@ -24,5 +24,5 @@ users.find({"name":"Batman"}) //will return the matched record
 ### update the record(s)
 ```
 //will update the record, first param is query object and second params is property that items you want to add
-users.update({name:"Logand"}, {"Property":"Marvel"}); 
+users.update({name:"Logan"}, {"Property":"Marvel"}); 
 ```

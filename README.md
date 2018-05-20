@@ -1,5 +1,5 @@
 # nibble-db
-small database which uses nodejs fs module to store you data
+small database which uses nodejs fs module to store your data
 ### Prerequisites
 you need to have node version 6 and above
 ### installing

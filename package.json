@@ -1,13 +1,14 @@
 {
   "name": "nibble-db",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "small size database which uses file system to manage you data",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=18.0.0"
   },
   "keywords": [
     "local-store",
@@ -21,11 +22,16 @@
     "email": "manish.sep1989@gmail.com"
   },
   "author": "Manish Kumar <manish.sep1989@gmail.com>",
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/man1989/nibble-db/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "dependencies": {
-    "uuid": "^3.2.1"
+    "filtr": "^0.3.0",
+    "uuid": "11.1.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "20.1.4",
+    "@types/node": "22.13.5",
+    "ts-node": "10.9.2",
+    "tsup": "8.4.0",
+    "typescript": "5.7.3"
   }
 }

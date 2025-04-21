@@ -71,26 +71,38 @@ export class Collection<T> {
     async update(query: Partial<T & Basetype>, obj: Partial<T>) {
         util.validateInput(query);
         util.validateInput(obj);
-        let updates = await this.find(query);
-        if(updates && typeof updates !== "object") {
-            throw new Error("test");
-        }
-
-        (updates as any[]).forEach((row) => {
-            for (let key in obj) {
-                if (obj.hasOwnProperty(key)) {
-                    row[key] = obj[key];
-                }
-            }
-        });
-    
+     
+        const filtered = filter(query as any);
+        let fileData: string = await readFile(this.getPath(), "utf-8");
         try {
-            let path = this.getPath();
-            await stat(path);
-            writeFile(path, JSON.stringify(updates));
-        } catch (err) {
-            throw err;
-        }
-    };        
+            let results = JSON.parse(fileData) as (T&Basetype)[];
+            const updates = filtered.test(results, query) as (T&Basetype)[];    
+            (updates as any[]).forEach((row) => {
+                for (let key in obj) {
+                    if (obj.hasOwnProperty(key)) {
+                        row[key] = obj[key];
+                    }
+                }
+            });
+
+            return writeFile(this.getPath(), JSON.stringify(results));
+
+        } catch (err) {}
+    }        
+
+    async delete(query: any){
+        const filtered = filter(query as any);
+        let fileData: string = await readFile(this.getPath(), "utf-8");
+        try {
+            let results = JSON.parse(fileData) as (T&Basetype)[];
+            const filteredRes = filtered.test(results, query) as (T&Basetype)[];
+            const deletedData = results.filter((result) => {
+                return filteredRes.findIndex(f=>f._id === result._id) === -1
+            });
+
+            return writeFile(this.getPath(), JSON.stringify(deletedData));
+
+        } catch (err) {}
+    }
 }
 

@@ -5,7 +5,7 @@ import { mkdir, stat } from "node:fs/promises";
 const NOT_VALID = "provide a valid input";
 
 export class DB {
-    private static _rootPath: string = join(__dirname, "../._$$db$$");
+    private static _rootPath: string = join(__dirname, "../.$$db$$");
     private _collections = new Map<string, InstanceType<typeof Collection>>()
     private _current =  {} as InstanceType<typeof Collection>;
     readonly name: string ;
